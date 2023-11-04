@@ -1,3 +1,11 @@
+Authentik
+===
+For this module to work, the following environment variables are neede to be exported:
+* `AWS_ACCESS_KEY_ID` - needed for the S3 Backend
+* `AWS_SECRET_ACCESS_KEY` - needed for the S3 Backend
+* `AUTHENTIK_TOKEN` - needed for Authentik management
+* `AUTHENTIK_URL` - needed for Authentik management
+
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
