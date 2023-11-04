@@ -1,0 +1,8 @@
+keys:
+  - &home age1f6xmttma375esf4j4r3kwnc2nm8007x6lkgnv3tw53hyyqn539xq8teps8
+
+creation_rules:
+  - path_regex: (.envrc|terraform.tfvars)
+    key_groups:
+      - age:
+        - *home

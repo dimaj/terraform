@@ -1,0 +1,3 @@
+*.tfvars          diff=sopsdiffer filter=sops-encrypt
+.envrc            diff=sopsdiffer filter=sops-encrypt
+

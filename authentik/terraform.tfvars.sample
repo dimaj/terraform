@@ -1,0 +1,44 @@
+proxy_apps = {
+    application-1={
+        host                  = "application hostname (e.g. 'https://myapp.mydomain.com)"
+        access_token_validity = "days=1"
+        cookie_domain         = "mydomain.org"
+        mode                  = "forward_domain"
+        meta_launch_url       = "blank://blank"
+        authn_flow            = "default-authentication-flow"
+        skip_path_regex       = <<-EOT
+                ^.*/api/.*$
+            EOT
+    }
+    "application 2" = {
+        host                  = "application hostname (e.g. 'https://myapp2.mydomain.com)"
+        access_token_validity = "days=1"
+        cookie_domain         = "mydomain.org"
+        mode                  = "forward_domain"
+        meta_launch_url       = "blank://blank"
+        authn_flow            = "default-authentication-flow"
+        skip_path_regex       = <<-EOT
+                ^.*/api/.*$
+            EOT
+    }
+}
+
+oauth2_apps = {
+  "OAuth Application" = {
+    client_id               = "some client id"
+    authorization_flow_name = "default-provider-authorization-implicit-consent"
+    redirect_uris           = [".*"]
+    signing_key_name        = "authentik Self-signed Certificate"
+    sub_mode                = "user_username"
+    access_token_validity   = "hours=1"
+    access_code_validity    = "minutes=1"
+    refresh_token_validity  = "days=30"
+    scopes = [
+      "goauthentik.io/providers/oauth2/scope-email",
+      "goauthentik.io/providers/oauth2/scope-openid",
+      "goauthentik.io/providers/oauth2/scope-profile",
+    ]
+  }
+}
+
+service_connection = "ID of the Outpost Integration"
