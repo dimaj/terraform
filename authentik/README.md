@@ -47,3 +47,18 @@ For this module to work, the following environment variables are neede to be exp
 | <a name="output_oauth2_app"></a> [oauth2\_app](#output\_oauth2\_app) | OAuth2/OIDC Application IDs |
 | <a name="output_proxy_app"></a> [proxy\_app](#output\_proxy\_app) | Proxy Application IDs |
 <!-- END_TF_DOCS -->
+
+## Importing Resources
+
+In order to import resources, the following commands will need to be run:
+```
+terraform import module.proxy_app\[\"<application name>\"\].authentik_provider_proxy.application <id>
+terraform import module.proxy_app\[\"<application name>\"\].authentik_application.application <app-name>
+terraform import module.oauth2_app\[\"<application name>\"\].authentik_provider_proxy.application <id>
+terraform import module.oauth2_app\[\"<application name>\"\].authentik_application.application <app-name>
+```
+
+Where,
+* `application name` is name of the application to import and it must match application name from the `terrafrom.tfvars` file
+* `id` is the provider ID as found in the Authentik's admin interface
+* `app-name` is the application name as found in the Authentik's admin interface
