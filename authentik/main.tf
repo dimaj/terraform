@@ -21,6 +21,7 @@ module "oauth2_app" {
   access_code_validity    = lookup(each.value, "access_code_validity", null)
   refresh_token_validity  = lookup(each.value, "refresh_token_validity", null)
   scopes                  = each.value.scopes
+  meta_launch_url         = lookup(each.value, "meta_launch_url", null)
 }
 
 resource "authentik_outpost" "outpost" {

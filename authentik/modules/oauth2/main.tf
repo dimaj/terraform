@@ -26,5 +26,6 @@ resource "authentik_application" "application" {
   slug              = join("-", split(" ", lower(var.application_name)))
   protocol_provider = authentik_provider_oauth2.application.id
   meta_launch_url   = var.meta_launch_url
+  open_in_new_tab   = true
 }
 
